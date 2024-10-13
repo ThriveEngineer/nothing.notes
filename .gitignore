@@ -41,7 +41,3 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-# ignore ALL firebase_page.dart files
-
-*firebase_options.dart
