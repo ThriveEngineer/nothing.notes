@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:nothing_note/firebase_options.dart';
+import 'package:nothing_note/irno/firebase_options.dart';
 import 'package:nothing_note/home_page.dart';
 import 'package:nothing_note/theme.dart';
 
