@@ -81,7 +81,7 @@ class LoginPage extends StatelessWidget {
                     color: Theme.of(context).colorScheme.primary,),
                     ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: onTap,
                     child: const Text(
                       " Register Here!",
                     style: TextStyle(
