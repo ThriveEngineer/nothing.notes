@@ -9,10 +9,23 @@
       "client_info": {
         "mobilesdk_app_id": "1:131271673062:android:8af0ca509e4518a6942727",
         "android_client_info": {
-          "package_name": "thrive.nothing_note"
+          "package_name": "com.note.app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "131271673062-o44mf721fogeuhu0bgddikcm029gpfbn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.note.app",
+            "certificate_hash": "ecee3c5ad862183061a3aa64168ae136256f389b"
+          }
+        },
+        {
+          "client_id": "131271673062-a0p13v01ramqdjif231c2okv276vqgni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDYY_fnYHHbymNV9W1TZ1Bv1IvS7X16Ixc"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "131271673062-a0p13v01ramqdjif231c2okv276vqgni.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "131271673062-6tcqj1ct29va9o0sorhpgn7c73d4lv8u.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "thrive.nothingNote"
+              }
+            }
+          ]
         }
       }
     }
