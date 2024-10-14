@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:nothing_note/services/firestore.dart';
 
@@ -12,8 +13,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   // firestore
   final FirestoreService firestoreService = FirestoreService();
-  
   final TextEditingController textController = TextEditingController();
+
+  // logout user
+  void logout() {
+    FirebaseAuth.instance.signOut();
+  }
 
   // open a Textbox to add a note
   void openNoteBox({String? docID}) {
@@ -52,7 +57,19 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Notes", style: TextStyle(fontFamily: "Nothing", fontWeight: FontWeight.w500, fontSize: 40),),),
+      appBar: AppBar(
+        title: const Text(
+          "Notes", 
+          style: TextStyle(
+            fontFamily: "Nothing", 
+            fontWeight: FontWeight.w500, 
+            fontSize: 40),
+            ),
+            actions: [
+              // logout button
+              IconButton(onPressed: logout, icon: Icon(Icons.logout_rounded))
+            ],
+           ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.redAccent,
         onPressed: openNoteBox, 
