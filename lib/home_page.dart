@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
               // close the box
               Navigator.pop(context);
             }, 
-            child: Text("Add", style: TextStyle(fontFamily: "No", color: Theme.of(context).colorScheme.inversePrimary,),),
+            child: Text("Add", style: TextStyle(fontFamily: "Nothing", color: Theme.of(context).colorScheme.inversePrimary,),),
             ),
         ],
         ));
