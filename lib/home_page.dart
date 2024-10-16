@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
             ),
             actions: [
               // logout button
-              IconButton(onPressed: logout, icon: Icon(Icons.logout_rounded))
+              IconButton(onPressed: logout, icon: Image.asset("lib/icons/logout_icon.png")),
             ],
            ),
       floatingActionButton: FloatingActionButton(
