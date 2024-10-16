@@ -70,8 +70,10 @@ class _HomePageState extends State<HomePage> {
             fontSize: 40),
             ),
             actions: [
+
               // logout button
               IconButton(onPressed: logout, icon: Image.asset("lib/icons/logout_icon.png")),
+
             ],
            ),
       floatingActionButton: FloatingActionButton(
@@ -82,6 +84,7 @@ class _HomePageState extends State<HomePage> {
         body: StreamBuilder<QuerySnapshot>(
           stream: firestoreService.getNotesStream(),
           builder: (context, snapshot) {
+
             // if we have data, get all the docs
             if (snapshot.hasData) {
               List notesList = snapshot.data!.docs;
@@ -90,6 +93,7 @@ class _HomePageState extends State<HomePage> {
               return ListView.builder(
                 itemCount: notesList.length,
                 itemBuilder: (context, index) {
+                  
                 // get each individual doc
                 DocumentSnapshot document = notesList[index];
                 String docID = document.id;
@@ -105,10 +109,13 @@ class _HomePageState extends State<HomePage> {
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+
+                      // edit button
                       IconButton(onPressed: () => openNoteBox(docID: docID), 
                       icon: Image.asset("lib/icons/edit_icon.png"),
                       ),
 
+                      // delete button
                       IconButton(onPressed: () => firestoreService.deleteNote(docID), 
                       icon: Image.asset("lib/icons/delete_icon.png"),
                       ),

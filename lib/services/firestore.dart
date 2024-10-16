@@ -6,6 +6,7 @@ class FirestoreService {
   final CollectionReference notes =
   FirebaseFirestore.instance.collection('notes');
 
+  // ADD: add new notes
   Future<void> addNote(String userId,String note) async {
     final userId = FirebaseAuth.instance.currentUser?.uid;
     if (userId != null) {
@@ -16,6 +17,8 @@ class FirestoreService {
       });
     }
   }
+
+  // GET: get all notes
 Stream<QuerySnapshot> getNotesStream() {
   final userId = FirebaseAuth.instance.currentUser?.uid;
   if (userId != null) {
@@ -36,6 +39,6 @@ Stream<QuerySnapshot> getNotesStream() {
 
   // DELETE: delete notes given a doc id
   Future<void> deleteNote(String docID) {
-    return notes.doc(docID).delete();
-  }
+  return notes.doc(docID).delete();
+ }
 }
