@@ -22,38 +22,41 @@ class _HomePageState extends State<HomePage> {
 
   // open a Textbox to add a note
   void openNoteBox({String? docID}) {
-    showDialog(
-      context: context, 
-      builder: (context) => AlertDialog(
-        content: TextField(
-          controller: textController,
-        ), 
-        backgroundColor: Theme.of(context).colorScheme.secondary,
-        actions: [
-          // button to save
-          ElevatedButton(
-            onPressed: () {
-              // add a new note
-              if (docID == null) {
-                firestoreService.addNote(textController.text);
+  showDialog(
+    context: context, 
+    builder: (context) => AlertDialog(
+      content: TextField(
+        controller: textController,
+      ), 
+      backgroundColor: Theme.of(context).colorScheme.secondary,
+      actions: [
+        // button to save
+        ElevatedButton(
+          onPressed: () {
+            // add a new note
+            if (docID == null) {
+              final userId = FirebaseAuth.instance.currentUser?.uid;
+              if (userId != null) {
+                firestoreService.addNote(userId, textController.text);
               }
+            }
 
-              // update an exsisting note
-              else {
-                firestoreService.updateNote(docID, textController.text);
-              }
+            // update an exsisting note
+            else {
+              firestoreService.updateNote(docID, textController.text);
+            }
 
-              // clear the text controller
-              textController.clear();
+            // clear the text controller
+            textController.clear();
 
-              // close the box
-              Navigator.pop(context);
-            }, 
-            child: Text("Add", style: TextStyle(fontFamily: "Nothing", color: Theme.of(context).colorScheme.inversePrimary,),),
-            ),
-        ],
-        ));
-  }
+            // close the box
+            Navigator.pop(context);
+          }, 
+          child: Text("Add", style: TextStyle(fontFamily: "Nothing", color: Theme.of(context).colorScheme.inversePrimary,),),
+          ),
+      ],
+      ));
+}
 
   @override
   Widget build(BuildContext context) {

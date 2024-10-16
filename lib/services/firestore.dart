@@ -1,25 +1,30 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class FirestoreService {
   // get collection of notes
   final CollectionReference notes =
   FirebaseFirestore.instance.collection('notes');
 
-  // CREATE: add a new note
-  Future<void> addNote(String note) {
-    return notes.add({
-      "note": note,
-      "timestamp": Timestamp.now(),
-    });
+  Future<void> addNote(String userId,String note) async {
+    final userId = FirebaseAuth.instance.currentUser?.uid;
+    if (userId != null) {
+      await notes.doc(userId).collection('notes').add({
+        "note": note,
+        "timestamp": Timestamp.now(),
+        "userId": userId,
+      });
+    }
   }
-
-  // READ: get notes from the database
-  Stream<QuerySnapshot> getNotesStream() {
-    final notesStream =
-    notes.orderBy("timestamp", descending: true).snapshots();
-
+Stream<QuerySnapshot> getNotesStream() {
+  final userId = FirebaseAuth.instance.currentUser?.uid;
+  if (userId != null) {
+    final notesStream = notes.doc(userId).collection('notes').orderBy("timestamp", descending: true).snapshots();
     return notesStream;
+  } else {
+    return Stream.empty(); // Return an empty stream
   }
+}
 
   // UPDATE: update notes given a doc id
   Future<void> updateNote(String docID, String newNote) {
