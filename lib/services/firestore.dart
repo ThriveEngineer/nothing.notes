@@ -29,14 +29,6 @@ Stream<QuerySnapshot> getNotesStream() {
   }
 }
 
-  // UPDATE: update notes given a doc id
-  Future<void> updateNote(String docID, String newNote) {
-    return notes.doc(docID).update({
-      "note": newNote,
-      "timestamp": Timestamp.now(),
-    });
-  }
-
   // DELETE: delete notes given a doc id
   Future<void> deleteNote(String docID, String userId) async {
     final userId = FirebaseAuth.instance.currentUser?.uid;

@@ -45,11 +45,6 @@ class _HomePageState extends State<HomePage> {
               }
             }
 
-            // update an exsisting note
-            else {
-              firestoreService.updateNote(docID, textController.text);
-            }
-
             // clear the text controller
             textController.clear();
 
@@ -127,16 +122,6 @@ class _HomePageState extends State<HomePage> {
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-
-                      // edit button
-                      IconButton(onPressed: () => openNoteBox(docID: docID), 
-                      icon: SvgPicture.asset(
-                        'lib/icons/edit_icon.svg',
-                        width: 40,
-                        height: 40,
-                        color: Colors.white,
-                        ),
-                      ),
 
                       // delete button
                       IconButton(onPressed: () => firestoreService.deleteNote(docID, userId!), 
