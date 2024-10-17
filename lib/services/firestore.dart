@@ -38,7 +38,8 @@ Stream<QuerySnapshot> getNotesStream() {
   }
 
   // DELETE: delete notes given a doc id
-  Future<void> deleteNote(String docID) {
-  return notes.doc(docID).delete();
+  Future<void> deleteNote(String docID, String userId) async {
+    final userId = FirebaseAuth.instance.currentUser?.uid;
+  return notes.doc(userId).collection('notes').doc(docID).delete();
  }
 }

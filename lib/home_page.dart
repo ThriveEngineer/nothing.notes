@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nothing_note/services/firestore.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,6 +15,7 @@ class _HomePageState extends State<HomePage> {
   // firestore
   final FirestoreService firestoreService = FirestoreService();
   final TextEditingController textController = TextEditingController();
+  final userId = FirebaseAuth.instance.currentUser?.uid;
 
   // logout user
   void logout() {
@@ -30,9 +32,11 @@ class _HomePageState extends State<HomePage> {
       ), 
       backgroundColor: Theme.of(context).colorScheme.secondary,
       actions: [
+
         // button to save
         ElevatedButton(
           onPressed: () {
+
             // add a new note
             if (docID == null) {
               final userId = FirebaseAuth.instance.currentUser?.uid;
@@ -72,15 +76,29 @@ class _HomePageState extends State<HomePage> {
             actions: [
 
               // logout button
-              IconButton(onPressed: logout, icon: Image.asset("lib/icons/logout_icon.png")),
+              IconButton(onPressed: logout, icon: SvgPicture.asset(
+                          'lib/icons/logout_icon.svg',
+                          width: 40,
+                          height: 40,
+                          color: Colors.white,
+                          )),
 
             ],
            ),
+
+           // add a new note
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.redAccent,
         onPressed: openNoteBox, 
-        child: Image.asset("lib/icons/plus_icon.png"),
+        child: SvgPicture.asset(
+                  'lib/icons/plus_icon.svg',
+                  width: 35,
+                  height: 35,
+                  color: Colors.white,
+                  ),
         ),
+
+
         body: StreamBuilder<QuerySnapshot>(
           stream: firestoreService.getNotesStream(),
           builder: (context, snapshot) {
@@ -112,12 +130,22 @@ class _HomePageState extends State<HomePage> {
 
                       // edit button
                       IconButton(onPressed: () => openNoteBox(docID: docID), 
-                      icon: Image.asset("lib/icons/edit_icon.png"),
+                      icon: SvgPicture.asset(
+                        'lib/icons/edit_icon.svg',
+                        width: 40,
+                        height: 40,
+                        color: Colors.white,
+                        ),
                       ),
 
                       // delete button
-                      IconButton(onPressed: () => firestoreService.deleteNote(docID), 
-                      icon: Image.asset("lib/icons/delete_icon.png"),
+                      IconButton(onPressed: () => firestoreService.deleteNote(docID, userId!), 
+                      icon: SvgPicture.asset(
+                        'lib/icons/delete_icon.svg',
+                        width: 40,
+                        height: 40,
+                        color: Colors.redAccent,
+                        ),
                       ),
                     ],
                   ),
