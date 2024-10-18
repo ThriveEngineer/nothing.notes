@@ -41,15 +41,15 @@ https://github.com/ThriveEngineer/nothing.notes/releases/tag/v0.3-beta
 
 git clone https://github.com/AzhamProdLive/Notes_App_Nothing.git
 
-
+-----------------------------------------------------------------------
 #### 2. Navigate to the project directory
 
-
+-----------------------------------------------------------------------
 #### 3. Install dependencies
 
 flutter pub get
 
-
+-----------------------------------------------------------------------
 #### 4. Run the app
 
 flutter run
