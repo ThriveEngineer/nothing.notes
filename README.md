@@ -34,3 +34,18 @@ The next big update will be the November update it comes out on the 11/1/2024 an
 
 The Latest Update was on the 10/17/2024 and it includes some bugfixes and new svg icons.
 https://github.com/ThriveEngineer/nothing.notes/releases/tag/v0.3-beta
+
+
+Getting Started
+Clone the repository
+
+git clone https://github.com/AzhamProdLive/Notes_App_Nothing.git
+Navigate to the project directory
+
+cd Notes_APP
+Install dependencies
+
+flutter pub get
+Run the app
+
+flutter run
