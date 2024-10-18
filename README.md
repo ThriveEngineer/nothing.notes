@@ -36,16 +36,20 @@ The Latest Update was on the 10/17/2024 and it includes some bugfixes and new sv
 https://github.com/ThriveEngineer/nothing.notes/releases/tag/v0.3-beta
 
 
-Getting Started
-Clone the repository
+## Getting Started
+1. Clone the repository
 
 git clone https://github.com/AzhamProdLive/Notes_App_Nothing.git
-Navigate to the project directory
 
-cd Notes_APP
-Install dependencies
+
+2. Navigate to the project directory
+
+
+3. Install dependencies
 
 flutter pub get
-Run the app
+
+
+4. Run the app
 
 flutter run
