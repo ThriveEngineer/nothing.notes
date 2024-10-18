@@ -4,7 +4,7 @@
 
 ![Logo](https://framerusercontent.com/images/Ehohady4a6E7FAPwsYaQMXAfQA.png)
 
-Nothing Note is a Android App that is build with the Nothing theme.
+Nothing Notes is a Android themed notes app.
 
 ## Features
 
@@ -23,7 +23,7 @@ Nothing Note is a Android App that is build with the Nothing theme.
 
 #### November Update (11/1/2024)
 
-The next big update will be the November update it comes out on the 11/1/2024 and it will include the Tasks, Google account support and Search notes feature.
+The next big update will be the November update it comes out on the 11/1/2024 and it will include the Tasks and Search notes feature.
 
 
 ## Latest Update!
