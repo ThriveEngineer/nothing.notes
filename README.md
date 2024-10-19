@@ -4,9 +4,7 @@
 
 ![Logo](https://framerusercontent.com/images/Ehohady4a6E7FAPwsYaQMXAfQA.png)
 
-Nothing Notes is a Android themed notes app. 
-
-Download the APK: https://drive.google.com/file/d/1j6Ctu4PkRXJcPkNm8LO9XTaplK9Ryw5l/view?usp=drive_link
+Nothing Notes is a Android themed notes app. Download the [APK](https://drive.google.com/file/d/1j6Ctu4PkRXJcPkNm8LO9XTaplK9Ryw5l/view?usp=drive_link)
 
 ## Features
 
