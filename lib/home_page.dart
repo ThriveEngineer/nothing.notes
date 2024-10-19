@@ -62,12 +62,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Notes", 
-          style: TextStyle(
-            fontFamily: "Nothing", 
-            fontWeight: FontWeight.w500, 
-            fontSize: 40),
-            ),
+            "Notes", 
+            style: TextStyle(
+              fontFamily: "Nothing", 
+              fontWeight: FontWeight.w500, 
+              fontSize: 40),
+              ),
             actions: [
 
               // logout button
