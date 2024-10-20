@@ -12,7 +12,7 @@ Nothing Note is a Android App that is build with the Nothing theme.
 - Deleting notes
 - Have your notes synced on all your android devices
 
-## Comming Soon!!!
+## Coming Soon!!!
 
 - Tasks
 - Search notes
