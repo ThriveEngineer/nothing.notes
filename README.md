@@ -13,7 +13,7 @@ Nothing Notes is a Nothing themed notes app. Download the [APK](https://drive.go
 - Deleting notes
 - Have your notes synced on all your android devices
 
-## Comming Soon!!!
+## Coming Soon!!!
 
 - Tasks
 - Search notes
