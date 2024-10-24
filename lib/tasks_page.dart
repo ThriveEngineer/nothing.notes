@@ -31,12 +31,14 @@ class _TasksPageState extends State<TasksPage> {
             actions: [
 
               // logout button
-              IconButton(onPressed: logout, icon: SvgPicture.asset(
-                          'lib/icons/logout_icon.svg',
-                          width: 40,
-                          height: 40,
-                          color: Colors.white,
-                          )),
+              IconButton(
+                onPressed: logout, 
+                icon: Icon(
+                  Icons.logout_rounded, 
+                  color: Colors.white, 
+                  size: 40,
+                   ),
+                  ),
 
             ],
       ),
