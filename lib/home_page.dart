@@ -3,8 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nothing_note/services/firestore.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:nothing_note/tasks_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,7 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   // firestore
   final FirestoreService firestoreService = FirestoreService();
   final TextEditingController textController = TextEditingController();
