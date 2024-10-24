@@ -41,6 +41,8 @@ dependencies:
   firebase_auth: ^5.3.1
   flutterfire_cli: ^0.1.1+2
   flutter_svg: ^1.0.3
+  typesense: ^0.5.1
+  google_nav_bar: ^5.0.6
 
 dev_dependencies:
   flutter_launcher_icons: ^0.11.0
