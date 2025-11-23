@@ -15,8 +15,11 @@ void main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await FirebaseApi().initNotifications();
 
+  ThemeProvider themeProvider = ThemeProvider();
+  await themeProvider.loadTheme();
+
   runApp(
-    ChangeNotifierProvider(create: (context) => ThemeProvider(),
+    ChangeNotifierProvider(create: (context) => themeProvider,
     child: const MyApp(),)
   );
 }
